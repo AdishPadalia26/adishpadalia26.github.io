@@ -55,7 +55,7 @@ const allSkills = [
   /* ── DevOps & Cloud ── */
   { name: "Docker", category: "devops", color: "#2496ed", bg: "#2496ed18", logo: `${cdnBase}/docker/docker-original.svg`, level: 85, tag: "Advanced" },
   { name: "Kubernetes", category: "devops", color: "#326ce5", bg: "#326ce518", logo: `${cdnBase}/kubernetes/kubernetes-original.svg`, level: 78, tag: "Proficient" },
-  { name: "Hadoop", category: "devops", color: "#66ccff", bg: "#66ccff18", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Hadoop_logo.svg", level: 80, tag: "Proficient" },
+  { name: "Hadoop", category: "devops", color: "#66ccff", bg: "#66ccff18", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Hadoop_logo.svg/1280px-Hadoop_logo.svg.png?_=20130221043911", level: 80, tag: "Proficient" },
   { name: "Spark", category: "devops", color: "#e25a1c", bg: "#e25a1c18", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Apache_Spark_logo.svg", level: 78, tag: "Proficient" },
   { name: "Git", category: "devops", color: "#f05032", bg: "#f0503218", logo: `${cdnBase}/git/git-original.svg`, level: 95, tag: "Expert" },
   { name: "Linux", category: "devops", color: "#fcc624", bg: "#fcc62418", logo: `${cdnBase}/linux/linux-original.svg`, level: 88, tag: "Advanced" },
