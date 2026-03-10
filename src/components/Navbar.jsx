@@ -34,7 +34,7 @@ const Navbar = () => {
 			sx={{
 				top: 0,
 				bgcolor: "rgba(4,5,21,0.6)",
-				backdropFilter: "blur(10px)",
+				backdropFilter: "blur(100px)",
 				borderBottom: "1px solid rgba(255,255,255,0.08)",
 				overflow: "visible",
 			}}
@@ -58,7 +58,7 @@ const Navbar = () => {
 			{isDesktop ? (
 				<NavLinks sections={sections} offset={offset} />
 			) : (
-				<IconButton color="inherit" onClick={() => setDrawerOpen(true)} aria-label="open navigation menu">
+			<IconButton color="inherit" onClick={() => setDrawerOpen(true)} aria-label="open navigation menu" sx={{ mr: 2.5 }}>
 					<MenuIcon />
 				</IconButton>
 			)}
@@ -68,7 +68,7 @@ const Navbar = () => {
 			<Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)} PaperProps={{ sx: { bgcolor: "#0b0d2a", color: "#cfe8ff", width: 280 } }} ModalProps={{ keepMounted: true }}>
 				<Toolbar sx={{ justifyContent: "space-between" }}>
 					<Typography variant="h6" sx={{ fontWeight: 900, letterSpacing: 0.3 }}>Menu</Typography>
-					<IconButton color="inherit" onClick={() => setDrawerOpen(false)} aria-label="close navigation menu">
+					<IconButton color="inherit" onClick={() => setDrawerOpen(false)} aria-label="close navigation menu" >
 						<CloseIcon />
 					</IconButton>
 				</Toolbar>

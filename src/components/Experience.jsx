@@ -133,7 +133,7 @@ const Experience = () => {
 						<Typography
 							variant="h3"
 							align="center"
-							sx={{ fontWeight: 800, mb: { xs: 1, md: 2 }, fontSize: { xs: '2rem', md: '2.5rem' } }}
+							sx={{ fontWeight: 800, mb: { xs: 1, md: 2 }, fontSize: { xs: '2rem', md: '2.5rem' }, mt: { xs: 5, md: 5 } }}
 						>
 							Experience
 						</Typography>

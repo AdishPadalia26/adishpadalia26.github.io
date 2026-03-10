@@ -8,7 +8,7 @@ const Contact = () => (
 	<Box id="contact" sx={{ position:'relative', minHeight: "100vh", py: { xs: 6, md: 10 }, bgcolor: "#040515", color: "#e6f1ff", overflow:'hidden' }}>
 		<ContactBackground />
 		<RevealOnView delay={0.01}>
-			<Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: { xs: 3, md: 4 }, fontSize: { xs: "2rem", md: "2.5rem" } }}>
+			<Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: { xs: 2, md: 0 }, fontSize: { xs: "2rem", md: "2.5rem" }, mt: { xs: 3, md: 4 } }}>
 				Contact
 			</Typography>
 		</RevealOnView>

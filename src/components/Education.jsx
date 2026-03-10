@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { Box, Typography, Chip, useMediaQuery, useTheme } from "@mui/material";
-import { motion, useInView, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useInView, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import RevealOnView from "./RevealOnView";
 import SchoolIcon from "@mui/icons-material/School";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -432,6 +432,7 @@ const Education3 = () => {
   // Touch swipe refs
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
+  const slideDir = useRef(1); // 1 = next, -1 = prev
 
   /* Scroll-driven turns (desktop only) */
   const { scrollYProgress } = useScroll(
@@ -554,9 +555,37 @@ const Education3 = () => {
   );
 
   /* ════════════════════════════════
-     MOBILE — tap/swipe, no sticky scroll
+     MOBILE — simple card carousel, no 3D flip
      ════════════════════════════════ */
+  const mobileTouchEnd = useCallback((e) => {
+    if (touchStartX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 36) {
+      if (dx < 0) { slideDir.current = 1; goNext(); }
+      else { slideDir.current = -1; goPrev(); }
+    }
+    touchStartX.current = null;
+  }, [goNext, goPrev]);
+
   if (isMobile) {
+    // Cards: cover (0) + edu pages (1..N) + end (N+1)
+    const mobileCardWidth = isXS ? "92vw" : "88vw";
+    const mobileCardHeight = isXS ? 440 : 500;
+
+    const mobileGoNext = () => { slideDir.current = 1; goNext(); };
+    const mobileGoPrev = () => { slideDir.current = -1; goPrev(); };
+
+    const mobileCardContent = () => {
+      if (currentPage === 0) return <CoverFront compact={isCompact} isMobile />;
+      if (currentPage >= TOTAL_LEAVES) return <CoverBack />;
+      return (
+        <Box sx={{ width: "100%", height: "100%", bgcolor: "#f7f3eb", borderRadius: "12px" }}>
+          <EduPageContent edu={educationData[currentPage - 1]} side="right" bookWidth={isXS ? 300 : 360} />
+        </Box>
+      );
+    };
+
     return (
       <Box id="education" sx={{
         bgcolor: "#040515", color: "#e6f1ff",
@@ -569,25 +598,45 @@ const Education3 = () => {
 
         {/* Heading */}
         <RevealOnView delay={0.01}>
-          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 0.5, fontSize: isXS ? "1.6rem" : "2rem", position: "relative", zIndex: 1 }}>
+          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 0.5, mt: 2, fontSize: isXS ? "1.6rem" : "2rem", position: "relative", zIndex: 1 }}>
             Education
           </Typography>
           <Typography align="center" sx={{ color: "#8892b0", fontSize: "0.85rem", mb: 2.5, position: "relative", zIndex: 1 }}>
-            Flip through my academic journey
+            My academic journey
           </Typography>
         </RevealOnView>
 
-        {/* Book + controls */}
+        {/* Card carousel + controls */}
         <Box sx={{
           flex: 1, display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center",
           gap: 2, position: "relative", zIndex: 1,
-          // Horizontal overflow clipping so translateX shift doesn't cause horizontal scroll
-          overflow: "hidden",
-          // Add side padding so the book isn't flush with edge when not flipped
-          px: 1,
+          overflow: "hidden", px: 1,
         }}>
-          {BookScene}
+          {/* Slide card */}
+          <Box
+            onTouchStart={onTouchStart}
+            onTouchEnd={mobileTouchEnd}
+            sx={{
+              width: mobileCardWidth, height: mobileCardHeight,
+              position: "relative", overflow: "hidden",
+              borderRadius: "14px",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.3)",
+            }}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={currentPage}
+                initial={{ x: slideDir.current * 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: slideDir.current * -300, opacity: 0 }}
+                transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }}
+              >
+                {mobileCardContent()}
+              </motion.div>
+            </AnimatePresence>
+          </Box>
 
           {/* Page label + dots */}
           <Box sx={{ textAlign: "center" }}>
@@ -603,7 +652,7 @@ const Education3 = () => {
 
           {/* Navigation row */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-            <NavBtn onClick={goPrev} disabled={currentPage === 0}>
+            <NavBtn onClick={mobileGoPrev} disabled={currentPage === 0}>
               <NavigateBeforeIcon sx={{ fontSize: 22, color: currentPage === 0 ? "#2a2a4a" : "#0db8ef" }} />
             </NavBtn>
 
@@ -615,7 +664,7 @@ const Education3 = () => {
                 : "Swipe or tap arrows"}
             </Typography>
 
-            <NavBtn onClick={goNext} disabled={currentPage >= TOTAL_LEAVES}>
+            <NavBtn onClick={mobileGoNext} disabled={currentPage >= TOTAL_LEAVES}>
               <NavigateNextIcon sx={{ fontSize: 22, color: currentPage >= TOTAL_LEAVES ? "#2a2a4a" : "#0db8ef" }} />
             </NavBtn>
           </Box>
@@ -639,7 +688,7 @@ const Education3 = () => {
         <Box sx={{ position: "absolute", inset: 0, opacity: 0.05, background: "radial-gradient(ellipse at 30% 40%, #0db8ef 0%, transparent 55%), radial-gradient(ellipse at 70% 60%, #f6bb48 0%, transparent 55%)", filter: "blur(120px)", pointerEvents: "none" }} />
 
         <RevealOnView delay={0.01}>
-          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 0.8, fontSize: { md: "2.2rem", lg: "2.5rem" }, position: "relative", zIndex: 1 }}>
+          <Typography variant="h3" align="center" sx={{ fontWeight: 800, mb: 0.8, mt: { md: 2, lg: 3 }, fontSize: { md: "2.2rem", lg: "2.5rem" }, position: "relative", zIndex: 1 }}>
             Education
           </Typography>
           <Typography align="center" sx={{ color: "#8892b0", fontSize: { md: "0.9rem", lg: "1rem" }, mb: { md: 3, lg: 4 }, position: "relative", zIndex: 1 }}>
