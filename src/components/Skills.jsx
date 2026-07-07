@@ -49,6 +49,9 @@ const allSkills = [
   { name: "Pandas", category: "ai", color: "#150458", bg: "#15045818", logo: `${cdnBase}/pandas/pandas-original.svg`, level: 90, tag: "Expert" },
   { name: "HuggingFace", category: "ai", color: "#ffbd45", bg: "#ffbd4518", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg", level: 88, tag: "Advanced" },
   { name: "LangChain", category: "ai", color: "#1c3c3c", bg: "#1c3c3c18", logo: "https://api.nuget.org/v3-flatcontainer/langchain/0.12.3-dev.1/icon", level: 85, tag: "Advanced" },
+  { name: "LangGraph", category: "ai", color: "#2f7d6f", bg: "#2f7d6f18", logo: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/langgraph-color.svg", level: 85, tag: "Advanced" },
+  { name: "LangSmith", category: "ai", color: "#ff6f61", bg: "#ff6f6118", logo: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/langsmith-color.svg", level: 82, tag: "Proficient" },
+  { name: "CrewAI", category: "ai", color: "#ff5a50", bg: "#ff5a5018", logo: "https://registry.npmmirror.com/@lobehub/icons-static-svg/latest/files/icons/crewai-color.svg", level: 82, tag: "Proficient" },
   { name: "Seaborn", category: "ai", color: "#4c72b0", bg: "#4c72b018", logo: "https://seaborn.pydata.org/_images/logo-mark-lightbg.svg", level: 88, tag: "Advanced" },
   { name: "Matplotlib", category: "ai", color: "#11557c", bg: "#11557c18", logo: `${cdnBase}/matplotlib/matplotlib-original.svg`, level: 90, tag: "Expert" },
 
