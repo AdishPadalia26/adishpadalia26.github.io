@@ -385,7 +385,7 @@ const About = () => {
                 <Box component="span" sx={{ color: "#e879f9", fontWeight: 600 }}>
                   IIT Bombay (with AIIMS Delhi)
                 </Box>{" "}
-                produced a novel 99% accurate Brain MRI segmentation model with just 2K parameters, published in IEEE Xplore. As a Graduate Research Assistant at Rutgers I built multimodal LiDAR-camera 3D object detection pipelines, and as a Teaching Assistant I mentored 200+ students.
+                produced a novel 99% accurate Brain MRI segmentation model with just 2K parameters, published in IEEE Xplore. As a Graduate Research Assistant at Rutgers University, I built multimodal LiDAR-camera 3D object detection pipelines, and as a Teaching Assistant I mentored 200+ students.
               </Typography>
               <Typography
                 variant="body2"
