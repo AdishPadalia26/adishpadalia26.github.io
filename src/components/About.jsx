@@ -362,15 +362,15 @@ const About = () => {
                   mb: 2,
                 }}
               >
-                I'm a Software Engineer and AI/ML Researcher pursuing my{" "}
+                I'm a Software Engineer and AI/ML Researcher, who recently completed my{" "}
                 <Box component="span" sx={{ color: "#0db8ef", fontWeight: 600 }}>
                   Master's in Computer Science at Rutgers University
-                </Box>
-                . With a strong foundation from my B.Tech at SPIT Mumbai (
+                </Box>{" "}
+                (May 2026). With a strong foundation from my B.Tech at SPIT Mumbai (
                 <Box component="span" sx={{ color: "#f6bb48", fontWeight: 600 }}>
                   Class Rank 4th
                 </Box>
-                ), I specialize in building intelligent systems at the intersection of AI/ML, full-stack development, and scalable cloud infrastructure.
+                ), I specialize in building intelligent systems at the intersection of agentic AI, machine learning, full-stack development, and scalable cloud infrastructure.
               </Typography>
               <Typography
                 variant="body1"
@@ -381,11 +381,11 @@ const About = () => {
                   mb: 2,
                 }}
               >
-                My research at{" "}
+                Lately I've been building agentic AI systems, multi-agent LLM pipelines and RAG-driven workflows that plan, reason, and act. My research at{" "}
                 <Box component="span" sx={{ color: "#e879f9", fontWeight: 600 }}>
                   IIT Bombay (with AIIMS Delhi)
                 </Box>{" "}
-                produced a novel 99% accurate Brain MRI segmentation model with just 2K parameters — published in IEEE Xplore. At Rutgers, I've built multimodal LiDAR-camera 3D object detection pipelines and mentored 200+ students as a Teaching Assistant.
+                produced a novel 99% accurate Brain MRI segmentation model with just 2K parameters, published in IEEE Xplore. As a Graduate Research Assistant at Rutgers I built multimodal LiDAR-camera 3D object detection pipelines, and as a Teaching Assistant I mentored 200+ students.
               </Typography>
               <Typography
                 variant="body2"
@@ -397,7 +397,7 @@ const About = () => {
               >
                 When I'm not coding, you'll find me exploring emerging AI research, competing in hackathons (
                 <Box component="span" sx={{ color: "#f6bb48" }}>HackRU 2025 Champion 🏆</Box>
-                ), or contributing to open-source projects. I'm actively exploring 2026 full-time roles in Software Engineering, Machine Learning Engineering, and Data Science.
+                ), or contributing to open-source projects. I'm actively exploring 2026 full-time roles in Agentic AI, Machine Learning Engineering, Software Engineering and Data Science.
               </Typography>
             </Box>
           </RevealOnView>
