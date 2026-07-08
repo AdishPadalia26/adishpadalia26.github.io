@@ -307,7 +307,7 @@ const About = () => {
       </RevealOnView>
 
       {/* ─── Profile + Bio Row ─── */}
-      <Box sx={{ maxWidth: 1100, mx: "auto", mb: { xs: 6, md: 8 }, ml: { xs: 0, md: 40 } }}>
+      <Box sx={{ maxWidth: 1100, mx: "auto", mb: { xs: 6, md: 8 } }}>
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={{ xs: 4, md: 6 }}

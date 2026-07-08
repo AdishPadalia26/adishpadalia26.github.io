@@ -23,7 +23,7 @@ const projects = [
     }
   },
 
-   {
+  {
   id: 2,
   title: "Tech Debt Quantifier",
   tagline: "Multi-agent tool that turns a GitHub repo's technical debt into a dollar cost and a prioritized fix roadmap, with per-developer attribution and Slack/Jira integration",
@@ -32,7 +32,7 @@ const projects = [
   stat: "8",
   statLabel: "Debt Categories",
   category: "Agentic AI and Infra",
-  image: "/images/techDebtQunatifier.png",
+  image: "public/images/techDebtQuantifier.png",
   links: {
     github: "https://github.com/AdishPadalia26/Tech-Debt-Quantifier"
   }
