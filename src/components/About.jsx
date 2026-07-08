@@ -307,7 +307,7 @@ const About = () => {
       </RevealOnView>
 
       {/* ─── Profile + Bio Row ─── */}
-      <Box sx={{ maxWidth: 1100, mx: "auto", mb: { xs: 6, md: 8 }, ml: { xs: 0, md: 40 } }}>
+      <Box sx={{ maxWidth: 1100, mx: "auto", mb: { xs: 6, md: 8 } }}>
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={{ xs: 4, md: 6 }}
@@ -316,7 +316,7 @@ const About = () => {
 
           {/* Bio Text */}
           <RevealOnView delay={0.2}>
-            <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
+            <Box sx={{ textAlign: "center" }}>
               <Typography
                 variant="h4"
                 sx={{
@@ -327,7 +327,7 @@ const About = () => {
               >
                 Adish Padalia
               </Typography>
-              <Stack direction="row" spacing={1} sx={{ mb: 2, justifyContent: { xs: "center", md: "flex-start" }, flexWrap: "wrap", gap: 0.5 }}>
+              <Stack direction="row" spacing={1} sx={{ mb: 2, justifyContent: "center", flexWrap: "wrap", gap: 0.5 }}>
                 <Chip
                   icon={<LocationOnIcon sx={{ fontSize: 14, color: "#0db8ef !important" }} />}
                   label="NYC Metro Area"
