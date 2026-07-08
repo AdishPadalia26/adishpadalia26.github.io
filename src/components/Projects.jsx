@@ -9,7 +9,38 @@ import RevealOnView from "./RevealOnView";
 /* ─── Project Data ─── */
 const projects = [
   {
-  id: 1,
+    id: 1,
+    title: "FinSight AI",
+    tagline: "Multi-agent GCP-deployed financial intelligence platform orchestrating 12 specialized agents for personalized financial planning, protected by 6-layer safety guardrails",
+    tags: ["GCP", "LangGraph", "LangSmith", "CI/CD", "LLMOps", "Multi-LLM Routing"],
+    accent: "#48bb78",
+    stat: "12",
+    statLabel: "AI Agents",
+    category: "Multi-Agent Systems",
+    image: "/images/finsight-ai.png",
+    links: {
+      github: "https://github.com/AdishPadalia26/Finsight-AI"
+    }
+  },
+
+   {
+  id: 2,
+  title: "Tech Debt Quantifier",
+  tagline: "Multi-agent tool that turns a GitHub repo's technical debt into a dollar cost and a prioritized fix roadmap, with per-developer attribution and Slack/Jira integration",
+  tags: ["MCP", "Meta Llama", "FastAPI", "PostgreSQL", "Multi-Agent Pipelines", "Prompt Engineering"],
+  accent: "#63b3ed",
+  stat: "8",
+  statLabel: "Debt Categories",
+  category: "Agentic AI and Infra",
+  image: "/images/techDebtQunatifier.png",
+  links: {
+    github: "https://github.com/AdishPadalia26/Tech-Debt-Quantifier"
+  }
+ },
+
+
+  {
+  id: 3,
   title: "AI Agent for Healthcare Licensing & Credentialing",
   tagline: "Hybrid LLM + OCR agent that extracts provider data and auto-fills credentialing forms",
   tags: ["Python", "AWS", "Gemini API", "Next.js", "Flask", "LLM Agents"],
@@ -25,7 +56,7 @@ const projects = [
 },
   
   {
-  id: 2,
+  id: 4,
   title: "ConstructGuard AI",
   tagline: "AI-powered construction safety monitoring system that detects hazards and enables dynamic insurance risk evaluation",
   tags: ["Python", "YOLOv11", "TensorFlow", "OpenCV", "React", "Flask", "Gemini API"],
@@ -39,22 +70,9 @@ const projects = [
     live: "https://devpost.com/software/constructguard-ai"
   }
 },
-  {
-  id: 3,
-  title: "Mental Health Bias & Advocacy Analysis",
-  tagline: "Transformer-based NLP pipeline analyzing sentiment and bias evolution in mental health discourse across research and media",
-  tags: ["Pytorch", "DistilBERT", "BART MNLI", "HuggingFace", "Transformers", "NLP"],
-  accent: "#63b3ed",
-  stat: "300+",
-  statLabel: "Papers Analyzed",
-  category: "Natural Language Processing",
-  image: "/images/mental-health-bias-detection.png",
-  links: {
-    github: "https://github.com/AdishPadalia26/Mental-Health-Bias-and-Advocacy-Analysis"
-  }
-},
+
 {
-  id: 4,
+  id: 5,
   title: "Serverless Runtime with ML Autoscaling",
   tagline: "Machine learning–driven predictive autoscaling system for serverless workloads on Kubernetes",
   tags: ["Python", "Kubernetes", "OpenFaaS", "Docker", "Prometheus", "Scikit-learn"],
@@ -68,7 +86,7 @@ const projects = [
   }
 }
 ,{
-  id: 5,
+  id: 6,
   title: "FoodFlow",
   tagline: "MERN-stack food ordering platform with secure authentication, real-time order tracking, and admin dashboard",
   tags: ["MongoDB", "Express", "React", "Node.js", "Tailwind CSS", "Firebase", "Redux"],
@@ -82,7 +100,7 @@ const projects = [
   }
 },
   {
-  id: 6,
+  id: 7,
   title: "Train Reservation System",
   tagline: "Java-based railway booking platform with MVC architecture and MySQL database",
   tags: ["Java", "JSP", "Servlets", "MySQL", "Tomcat", "MVC"],
@@ -96,48 +114,38 @@ const projects = [
     live: "https://drive.google.com/file/d/1yPmVz9WBWu2k9mbKYKCI-t9jELYi7LsL/view"
   }
 },
-{
-  id: 7,
-  title: "AI Bots for Intelligent Navigation",
-  tagline: "Autonomous navigation system combining path planning, probabilistic localization, and neural prediction",
-  tags: ["Python", "PyTorch", "AI Algorithms", "Particle Filters", "Pathfinding", "Simulation"],
-  accent: "#9f7aea",
-  stat: "3",
-  statLabel: "AI Paradigms",
-  category: "Artificial Intelligence",
-  image: "/images/ai-bots-navigation.jpg",  
+
+  {
+  id: 8,
+  title: "Mental Health Bias & Advocacy Analysis",
+  tagline: "Transformer-based NLP pipeline analyzing sentiment and bias evolution in mental health discourse across research and media",
+  tags: ["Pytorch", "DistilBERT", "BART MNLI", "HuggingFace", "Transformers", "NLP"],
+  accent: "#63b3ed",
+  stat: "300+",
+  statLabel: "Papers Analyzed",
+  category: "Natural Language Processing",
+  image: "/images/mental-health-bias-detection.png",
   links: {
-    github: "https://github.com/AdishPadalia26/AI-Bots-Intelligent-Navigation"
+    github: "https://github.com/AdishPadalia26/Mental-Health-Bias-and-Advocacy-Analysis"
   }
 },
 {
-  id: 8,
+  id: 9,
   title: "QuickBoard",
   tagline: "AI-powered banking onboarding platform enabling secure digital KYC and real-time identity verification",
   tags: ["Flutter", "Dart", "Firebase", "Computer Vision", "KYC", "WebAuthn"],
   accent: "#4fd1c5",
   stat: "98.5%",
   statLabel: "Fraud Detection",
-  category: "Mobile & FinTech",
+  category: "Mobile Development",
   image: "/images/quickboard.jpg",
   links: {
     github: "https://github.com/AdishPadalia26/QuickBoard"
   }
 },
-{
-  id: 9,
-  title: "Addzone",
-  tagline: "Flutter-based marketplace for discovering and managing local businesses with map-based search",
-  tags: ["Flutter", "Dart", "Firebase", "Google Maps API", "Mobile Development"],
-  accent: "#63b3ed",
-  stat: "500+",
-  statLabel: "Listings Indexed",
-  category: "Mobile Development",
-  image: "/images/addZone.webp",
-  links: {
-    github: "https://github.com/AdishPadalia26/Addzone-Flutter-App"
-  }
-}
+
+
+ 
 
 
 ];
