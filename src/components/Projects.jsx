@@ -32,7 +32,7 @@ const projects = [
   stat: "8",
   statLabel: "Debt Categories",
   category: "Agentic AI and Infra",
-  image: "public/images/techDebtQuantifier.png",
+  image: "/images/techDebtQuantifier.png",
   links: {
     github: "https://github.com/AdishPadalia26/Tech-Debt-Quantifier"
   }
